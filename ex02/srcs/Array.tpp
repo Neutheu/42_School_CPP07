@@ -6,7 +6,7 @@
 /*   By: nsouchal <nsouchal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 08:40:13 by nsouchal          #+#    #+#             */
-/*   Updated: 2024/09/20 12:16:41 by nsouchal         ###   ########.fr       */
+/*   Updated: 2024/09/26 09:28:46 by nsouchal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ template <typename T> Array<T> &Array<T>::operator=(const Array<T> &rhs)
 
 template <typename T> T &Array<T>::operator[](int index) const
 {
-    if (index < 0 || index > static_cast<int>(this->size_array) - 1)
+    if (index < 0 || index >= static_cast<int>(this->size_array))
         throw Array<T>::OutOfBoundsException();
     return (this->array_attribut[index]);  
 }

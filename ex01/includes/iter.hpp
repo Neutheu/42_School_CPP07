@@ -6,7 +6,7 @@
 /*   By: nsouchal <nsouchal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:31:53 by nsouchal          #+#    #+#             */
-/*   Updated: 2024/09/19 12:10:02 by nsouchal         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:52:05 by nsouchal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 
 # include <iostream>
 
-template <typename T> void iter(T *array_address, int len_array, void(*f)(T x))
+template <typename T, typename F> void iter(T *array_address, int len_array, F(*f)(T x))
 {
     for (int i = 0; i < len_array; i++)
         f(*(array_address + i));
 }
 
-template <typename T2> void test_function(T2 x)
+template <typename T2> int test_function(T2 x)
 {
    std::cout << x << std::endl;
+   return (0);
 }
 
 #endif
